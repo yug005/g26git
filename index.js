@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
+app.use('/users', require('./routes/user_routes'));
 mongoose.connect("mongodb://127.0.0.1:27017/mydatabase")
 .then(() => {
     console.log("Connected to MongoDB");
